@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
 <link rel="stylesheet" href="assets/css/admin.css">
 
-
+<script src="static/js/jquery-1.12.1.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/jquery.validate.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/my.js"></script>
 <script src="${pageContext.request.contextPath}/static/bootstrap-3.3.5-dist/js/bootstrap.js"></script>

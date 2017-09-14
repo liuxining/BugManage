@@ -43,12 +43,12 @@
 				var datas = data.split("#");
 				if(datas[2] == 1){
 					if(datas[1] == 2){
-						$("#" + data[0] + "stat").html("已停用");
-						$("#" + data[0] + "upStat").html('<a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="#" name="' + datas[0] + '#3" onclick="upStat(this)"><span class="am-icon-pencil-square-o"></span> 启用</a>')
+						$("#" + datas[0] + "stat").html("已停用");
+						$("#" + datas[0] + "upStat").html('<a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="#" name="' + datas[0] + '#3" onclick="upStat(this)"><span class="am-icon-pencil-square-o"></span> 启用</a>')
 					}
 					else{
-						$("#" + data[0] + "stat").html("正常");
-						$("#" + data[0] + "upStat").html('<a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="#" name="' + datas[0] + '#2" onclick="upStat(this)"><span class="am-icon-pencil-square-o"></span> 停用</a>')	
+						$("#" + datas[0] + "stat").html("正常");
+						$("#" + datas[0] + "upStat").html('<a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="#" name="' + datas[0] + '#2" onclick="upStat(this)"><span class="am-icon-pencil-square-o"></span> 停用</a>')	
 					}
 					$("#result").html('<div class="am-alert am-alert-success" role="alert">操作成功</div>')
 				}

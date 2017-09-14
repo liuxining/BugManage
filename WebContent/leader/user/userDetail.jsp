@@ -26,24 +26,37 @@
 	function upStat(obj){
 		
 		var name = obj.name;
-		
+		//alert(name);
 		var names = name.split('#');
+		
+		if(names[0] == 1){
+			alert("不能停用超级管理员");
+			return false;
+		}
+
+		
+		
 		$.get('${pageContext.request.contextPath}/UserServlet?method=upStat&id=' + names[0] + '&status=' + names[1], function(data) {
 			if(data != null && data.length > 0){
-		
+			//	alert(data);
 				var datas = data.split("#");
-				if(datas[2] == 1){
-					if(datas[1] == 2){
-						$("#" + data[0] + "stat").html("已停用");
-						$("#" + data[0] + "upStat").html('<a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="#" name="' + datas[0] + '#3" onclick="upStat(this)"><span class="am-icon-pencil-square-o"></span> 启用</a>')
+			//	alert(datas[0] + "," + datas[1] + "," + datas[2]);
+				if(datas[2] == "1"){
+				//	alert("succ");
+					if(datas[1] == "2"){
+					//	alert("to 2");
+						$("#" + datas[0] + "stat").html("已停用");
+						$("#" + datas[0] + "upStat").html('<a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="#" name="' + datas[0] + '#3" onclick="upStat(this)"><span class="am-icon-pencil-square-o"></span> 启用</a>')
 					}
 					else{
-						$("#" + data[0] + "stat").html("正常");
-						$("#" + data[0] + "upStat").html('<a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="#" name="' + datas[0] + '#2" onclick="upStat(this)"><span class="am-icon-pencil-square-o"></span> 停用</a>')	
+					//	alert("to 3");
+						$("#" + datas[0] + "stat").html("正常");
+						$("#" + datas[0] + "upStat").html('<a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="#" name="' + datas[0] + '#2" onclick="upStat(this)"><span class="am-icon-pencil-square-o"></span> 停用</a>')	
 					}
 					$("#result").html('<div class="am-alert am-alert-success" role="alert">操作成功</div>')
 				}
 				else{
+					//alert("fail");
 					$("#result").html('<div class="am-alert am-alert-danger" role="alert">操作失败</div>')
 				}
 			}
@@ -99,14 +112,14 @@
 						项目经理
 					</c:if>
 				</td>
-				<td id="${item.id}stat">
-					<c:if test="${item.status == 0 || item.status == 1}">
+				<td id="${userBean.id}stat">
+					<c:if test="${userBean.status == 0 || userBean.status == 1}">
 						审核中
 					</c:if>
-					<c:if test="${item.status == 2}">
+					<c:if test="${userBean.status == 2}">
 						已停用
 					</c:if>
-					<c:if test="${item.status == 3}">
+					<c:if test="${userBean.status == 3}">
 						正常
 					</c:if>
 				</td>
@@ -116,27 +129,27 @@
 						<td>
 							<div class="am-btn-toolbar">
 			                    <div class="am-btn-group am-btn-group-xs">
-			                      <a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="${pageContext.request.contextPath}/UserServlet?method=toUpdate&optr=admin&id=${item.id}&type=${type}&status2=${status2}&page=${page}"><span class="am-icon-pencil-square-o"></span> 编辑</a>
+			                      <a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="${pageContext.request.contextPath}/UserServlet?method=toUpdate&optr=admin&id=${userBean.id}&type=${type}&status2=${status2}&page=${page}"><span class="am-icon-pencil-square-o"></span> 编辑</a>
 
-			                     <a class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" href="${pageContext.request.contextPath}/UserServlet?method=delete&id=${item.id}&type=${type}&status2=${status2}&page=${page}" onclick="return confirm('确定删除吗？')"><span class="am-icon-trash-o"></span> 删除</a>
+			                     <a class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" href="${pageContext.request.contextPath}/UserServlet?method=delete&id=${userBean.id}&type=${type}&status2=${status2}&page=${page}" onclick="return confirm('确定删除吗？')"><span class="am-icon-trash-o"></span> 删除</a>
 			                    </div>
 			                   </div>
 			                  </td>
-						<td id="${item.id}upStat">
+						<td id="${userBean.id}upStat">
 							<div class="am-btn-toolbar">
 			                    <div class="am-btn-group am-btn-group-xs">
-								<c:if test="${item.status == 0 || item.status == 1}">
-									<a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="#" name="${item.id}#3" onclick="upStat(this)"><span class="am-icon-pencil-square-o"></span> 通过</a>
+								<c:if test="${userBean.status == 0 || userBean.status == 1}">
+									<a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="#" name="${userBean.id}#3" onclick="upStat(this)"><span class="am-icon-pencil-square-o"></span> 通过</a>
 			               
 								</c:if>
 			               
-								<c:if test="${item.status == 2}">
-									<a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="#" name="${item.id}#3" onclick="upStat(this)"><span class="am-icon-pencil-square-o"></span> 启用</a>
+								<c:if test="${userBean.status == 2}">
+									<a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="#" name="${userBean.id}#3" onclick="upStat(this)"><span class="am-icon-pencil-square-o"></span> 启用</a>
 			               
 								</c:if>
 
-								<c:if test="${item.status == 3}">
-									<a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="#" name="${item.id}#2" onclick="upStat(this)"><span class="am-icon-pencil-square-o"></span> 停用</a>
+								<c:if test="${userBean.status == 3}">
+									<a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="#" name="${userBean.id}#2" onclick="upStat(this)"><span class="am-icon-pencil-square-o"></span> 停用</a>
 			               
 								</c:if>
 			               
@@ -152,9 +165,17 @@
 			</tr>
 
 		</table>
+		
+		<div class="row-fluid">
+			<div class="col-md-4"></div>
+			<div class="col-md-4" id="result"></div>
+			<div class="col-md-4"></div>
+		</div>
+</div>
+</div>
+<div class="container-fluid">
 
-
-
+		<div class="row-fluid">
 		<c:if test="${userBean.type == 3}">
 
 		  <div class="am-cf am-padding am-padding-bottom-0">
@@ -169,7 +190,7 @@
 
 					
 					<div class="col-sm-3">
-						<select class="form-control" name="type">
+						<select name="type">
 							<c:if test="${type == 0 }">
 								<option value="0" selected="selected">所有语言</option>
 							</c:if>
@@ -204,7 +225,7 @@
 						</select>
 					</div>
 					<div class="col-sm-3">
-						<select class="form-control" name="status2">
+						<select name="status2">
 							<c:if test="${status2 == 0 }">
 								<option value="0" selected="selected">所有状态</option>
 							</c:if>
@@ -313,13 +334,13 @@
 			
 			<div class="row-fluid">
 
-				<form class="form-horizontal" action="${pageContext.request.contextPath}/UserServlet?method=detail&to=leader_user_userDetail" method="post">
+				<form class="am-form am-form-horizontal" action="${pageContext.request.contextPath}/UserServlet?method=detail&to=leader_user_userDetail" method="post">
 					
 					<input type="hidden" name="id" value="${userBean.id}">
 
 					
 					<div class="col-sm-3">
-						<select class="form-control" name="level">
+						<select name="level">
 							<c:if test="${level == 0 }">
 								<option value="0" selected="selected">所有Bug等级</option>
 							</c:if>
@@ -351,7 +372,7 @@
 						</select>
 					</div>
 					<div class="col-sm-3">
-						<select class="form-control" name="status2">
+						<select name="status2">
 							<c:if test="${status2 == 0 }">
 								<option value="0" selected="selected">所有Bug状态</option>
 							</c:if>
@@ -386,7 +407,7 @@
 						</select>
 					</div>
 					<div class="col-sm-3">
-						<select class="form-control" name="projectId">
+						<select name="projectId">
 							<c:if test="${projectId == 0 }">
 								<option value="0" selected="selected">所有项目</option>
 							</c:if>
@@ -487,11 +508,11 @@
 
 			<div class="row-fluid">
 
-				<form class="form-horizontal" action="${pageContext.request.contextPath}/UserServlet?method=detail&to=leader_user_userDetail" method="post">
+				<form class="am-form am-form-horizontal" action="${pageContext.request.contextPath}/UserServlet?method=detail&to=leader_user_userDetail" method="post">
 					<input type="hidden" name="id" value="${userBean.id}"/>
 				
 					<div class="col-sm-3">
-						<select class="form-control" name="level">
+						<select name="level">
 							<c:if test="${level == 0 }">
 								<option value="0" selected="selected">所有Bug等级</option>
 							</c:if>
@@ -531,11 +552,11 @@
 
 			<div class="row-fluid">
 
-				<form class="form-horizontal" action="${pageContext.request.contextPath}/UserServlet?method=detail&to=leader_user_userDetail" method="post">
+				<form class="am-form am-form-horizontal" action="${pageContext.request.contextPath}/UserServlet?method=detail&to=leader_user_userDetail" method="post">
 					<input type="hidden" name="id" value="${userBean.id}"/>
 
 					<div class="col-sm-3">
-						<select class="form-control" name="bugId">
+						<select name="bugId">
 							<c:if test="${bugId == 0 }">
 								<option value="0" selected="selected">所有Bug</option>
 							</c:if>

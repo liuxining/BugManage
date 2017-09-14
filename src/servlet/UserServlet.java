@@ -115,7 +115,7 @@ public class UserServlet extends HttpServlet {
 			
 			if(userBean.getId() != 1){
 				flag = userDao.update(userBean);
-				userBean.setStatus(3);
+				//userBean.setStatus(3);
 			}
 			resp.getWriter().print(userBean.getId() + "#" + userBean.getStatus() + "#" + (flag ? "1" : "2"));
 			resp.getWriter().flush();
