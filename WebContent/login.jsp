@@ -109,6 +109,12 @@
 		<c:if test="${param.status.equals('8')}">
 			<div class="am-alert am-alert-danger" role="alert">注册失败</div>
 		</c:if>
+		<c:if test="${param.status.equals('9')}">
+			<div class="am-alert am-alert-danger" role="alert">账号正在审核中</div>
+		</c:if>
+		<c:if test="${param.status.equals('10')}">
+			<div class="am-alert am-alert-danger" role="alert">账号已停用</div>
+		</c:if>
 		</div>
 		</div>
 		<div class="col-sm-4"></div>

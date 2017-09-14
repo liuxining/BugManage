@@ -312,23 +312,28 @@ public class UserServlet extends HttpServlet {
 				if(userBean.getType() == type){
 					if (userBean.getPassword().equals(password)) {
 						// 登录成功
-						req.getSession().setAttribute("loginUserBean", userBean);
-						Cookie cookie = new Cookie("loginUserId",userBean.getId() + "");
-						cookie.setPath("/");
-						cookie.setMaxAge(60 * 5);
-						resp.addCookie(cookie);
-						
-						System.out.println(userBean + " 登录成功！");
-						if(userBean.getType() == 1){
-							resp.sendRedirect("CollectServlet?method=toProgrammerIndex&to=programmer_main");
-						}
-						else if(userBean.getType() == 2){
-							//测试人员
-							resp.sendRedirect("CollectServlet?method=toTesterIndex&to=tester_main");
+						if(userBean.getStatus() != 3){
+							resp.sendRedirect("login.jsp?status=" + (userBean.getStatus() + 8));
 						}
 						else{
-							//项目经理
-							resp.sendRedirect("CollectServlet?method=toLeaderIndex&to=leader_main");
+							req.getSession().setAttribute("loginUserBean", userBean);
+							Cookie cookie = new Cookie("loginUserId",userBean.getId() + "");
+							cookie.setPath("/");
+							cookie.setMaxAge(60 * 5);
+							resp.addCookie(cookie);
+							
+							System.out.println(userBean + " 登录成功！");
+							if(userBean.getType() == 1){
+								resp.sendRedirect("CollectServlet?method=toProgrammerIndex&to=programmer_main");
+							}
+							else if(userBean.getType() == 2){
+								//测试人员
+								resp.sendRedirect("CollectServlet?method=toTesterIndex&to=tester_main");
+							}
+							else{
+								//项目经理
+								resp.sendRedirect("CollectServlet?method=toLeaderIndex&to=leader_main");
+							}
 						}
 					} else {
 						// 密码错误

@@ -207,8 +207,12 @@
 			
 			<div class="am-form-group">
 				<div class="am-u-sm-6 am-u-sm-push-3">
-					<button type="submit" class="am-btn am-btn-primary" disabled="disabled" id="submitBtn">提交</button>
-					
+					<c:if test='${param.optr.equals("admin") }'>
+						<button type="submit" class="am-btn am-btn-primary" id="submitBtn">提交</button>
+					</c:if>
+					<c:if test='${not param.optr.equals("admin") }'>
+						<button type="submit" class="am-btn am-btn-primary" disabled="disabled" id="submitBtn">提交</button>
+					</c:if>
 				</div>
 			</div>
 

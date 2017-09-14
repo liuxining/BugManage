@@ -121,7 +121,7 @@
 				<div class="modal-body">
 				
 				
-					<form class="am-form-horizontal" action="${pageContext.request.contextPath}/UserServlet?method=register&optr=user&to=tester_userInfo" method="post" id="checkForm">
+					<form class="am-form-horizontal" action="${pageContext.request.contextPath}/UserServlet?method=register&optr=user&to=userInfo" method="post" id="checkForm">
 						<div class="am-form-group">
 							<label class="col-md-3 am-form-label" for="phone">手机号</label>
 							<div class="col-md-9">

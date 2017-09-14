@@ -231,7 +231,7 @@
 							 <a class="am-btn am-btn-default am-btn-xs am-text-secondary" href="${pageContext.request.contextPath}/HandleBugServlet?method=toUpdate&id=${item.id}&bugId=${bugId}&pass=${pass}&userId=${loginUserBean.id}&page=${page}"><span class="am-icon-pencil-square-o"></span> 编辑</a>
 
 
-							 <a class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" href="${pageContext.request.contextPath}/HandleBugServlet?method=leaderListHandleBugDelete&id=${item.id}&bugId=${bugId}&pass=${pass}&userId=${userId}&page=${page}" onclick="return confirm('确定删除吗？')"><span class="am-icon-trash-o"></span> 删除</a>
+							 <a class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" href="${pageContext.request.contextPath}/HandleBugServlet?method=leaderListHandleBugDelete&id=${item.id}&bugId=${bugId}&pass=${pass}&userId=${userId}&page=${page}&to=listHandleBug" onclick="return confirm('确定删除吗？')"><span class="am-icon-trash-o"></span> 删除</a>
 
 	               		</c:if>
 
