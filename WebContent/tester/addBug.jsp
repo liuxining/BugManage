@@ -90,10 +90,10 @@
 							<option value="2">一般</option>
 						</c:if>
 						<c:if test="${updateBean.level == 3}">
-							<option value="3" selected="selected">严重</option>
+							<option value="3" selected="selected">重要</option>
 						</c:if>
 						<c:if test="${updateBean.level != 3}">
-							<option value="3">严重</option>
+							<option value="3">重要</option>
 						</c:if>
 						
 					</select>
@@ -143,8 +143,8 @@
 	<!-- </div> -->
 	<!-- <div class="col-md-2"></div> -->
 </div>
-
-
+</div>
+</div>
 <script src="${pageContext.request.contextPath }/assets/js/amazeui.min.js"></script>
 <script src="${pageContext.request.contextPath }/assets/js/app.js"></script>
 

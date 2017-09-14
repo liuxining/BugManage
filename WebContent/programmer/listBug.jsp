@@ -154,7 +154,7 @@
 							一般
 						</c:if>
 						<c:if test="${item.level == 3}">
-							严重
+							重要
 						</c:if>
 					</td>
 					<td>
