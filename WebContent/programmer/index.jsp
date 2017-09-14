@@ -77,7 +77,7 @@
           <table class="am-table am-table-bd am-table-striped admin-content-table">
             <thead>
               <tr>
-                <th>解决方案总数</th><th>未审核</th><th>未通过</th><th>通过</th>
+                <th>解决方案总数</th><th>审核中</th><th>未通过</th><th>通过</th>
               </tr>
             </thead>
             <tbody>
@@ -92,7 +92,7 @@
           <table class="am-table am-table-bd am-table-striped admin-content-table">
             <thead>
               <tr>
-                <th>我的解决方案总数</th><th>未审核</th><th>未通过</th><th>通过</th>
+                <th>我的解决方案总数</th><th>审核中</th><th>未通过</th><th>通过</th>
               </tr>
             </thead>
             <tbody>

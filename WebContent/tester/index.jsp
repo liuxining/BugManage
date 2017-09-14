@@ -24,7 +24,7 @@
       <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-center admin-content-list ">
         <li><a href="#" class="am-text-success"><span class="am-icon-btn am-icon-file-text"></span><br/>进行中的项目<br/>${projectNoFinCountc}</a></li>
         <li><a href="#" class="am-text-warning"><span class="am-icon-btn am-icon-briefcase"></span><br/>Bug总数量<br/>${bugCountc}</a></li>
-        <li><a href="#" class="am-text-danger"><span class="am-icon-btn am-icon-recycle"></span><br/>已解决的Bug数量<br/>${bugFinCountc}</a></li>
+        <li><a href="#" class="am-text-danger"><span class="am-icon-btn am-icon-recycle"></span><br/>已解决的Bug数量<br/>${bug4Countc}</a></li>
         <li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>解决方案总数量<br/>${handleBugCountc}</a></li>
       </ul>
 
@@ -54,7 +54,7 @@
 								一般
 							</c:if>
 							<c:if test="${item.level == 3}">
-								严重
+								重要
 							</c:if>
 						</td>
 						<td>
@@ -97,7 +97,7 @@
           <table class="am-table am-table-bd am-table-striped admin-content-table">
             <thead>
             <tr>
-              <th>Bug总数</th><th>未解决</th><th>已解决</th><th>已关闭</th>
+              <th>Bug总数</th><th>未修复</th><th>已解决</th><th>已关闭</th>
             </tr>
             </thead>
             <tbody>
@@ -113,7 +113,7 @@
           <table class="am-table am-table-bd am-table-striped admin-content-table">
             <thead>
             <tr>
-              <th>解决方案总数</th><th>未审核</th><th>未通过</th><th>通过</th>
+              <th>解决方案总数</th><th>审核中</th><th>未通过</th><th>通过</th>
             </tr>
             </thead>
             <tbody>

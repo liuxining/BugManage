@@ -110,7 +110,7 @@
           <table class="am-table am-table-bd am-table-striped admin-content-table">
             <thead>
             <tr>
-              <th>项目总数</th><th>未开始</th><th>正在进行</th><th>已完成</th>
+              <th>项目总数</th><th>未进行</th><th>正在进行</th><th>已完成</th>
             </tr>
             </thead>
             <tbody>
@@ -141,7 +141,7 @@
           <table class="am-table am-table-bd am-table-striped admin-content-table">
             <thead>
             <tr>
-              <th>解决方案总数</th><th>未审核</th><th>未通过</th><th>通过</th>
+              <th>解决方案总数</th><th>审核中</th><th>未通过</th><th>通过</th>
             </tr>
             </thead>
             <tbody>
