@@ -122,6 +122,11 @@ public class ProjectServlet extends HttpServlet {
 			req.getRequestDispatcher("ProjectServlet?method=list&to=leader_listProject&status=" + (flag ? 3 : 4) + "&type=" + type + "&status2=" + status2 + "&userId=" + userId + "&page=" + page).forward(req, resp);
 		} catch (ServletException | IOException | SQLException e) {
 			e.printStackTrace();
+			try {
+				req.getRequestDispatcher("ProjectServlet?method=list&to=leader_listProject&status=4&type=" + type + "&status2=" + status2 + "&userId=" + userId + "&page=" + page).forward(req, resp);
+			} catch (ServletException | IOException e1) {
+				e1.printStackTrace();
+			}
 		}
 	}
 

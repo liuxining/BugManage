@@ -240,6 +240,11 @@ public class HandleBugServlet extends HttpServlet {
 			resp.sendRedirect("HandleBugServlet?method=getBugByUserId&userId=" + userId + "&status=" + (flag ? 3 : 4));
 		} catch (SQLException | IOException e) {
 			e.printStackTrace();
+			try {
+				resp.sendRedirect("HandleBugServlet?method=getBugByUserId&userId=" + userId + "&status=4");
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
 		
 	}

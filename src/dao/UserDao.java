@@ -23,8 +23,8 @@ public class UserDao {
 
 	public boolean add(UserBean userBean) throws SQLException {
 		QueryRunner runner = new QueryRunner(DataSourceUtil.getDataSource());
-		String sql = "insert into user(name,password,type,sex,birthDay,phone,num,createDate) values(?,?,?,?,?,?,?,?)";
-		int count = runner.update(sql, userBean.getName(),userBean.getPassword(),userBean.getType(),userBean.getSex(),userBean.getBirthDay(),userBean.getPhone(),userBean.getNum(),userBean.getCreateDate());
+		String sql = "insert into user(name,password,type,sex,birthDay,phone,status,num,createDate) values(?,?,?,?,?,?,?,?,?)";
+		int count = runner.update(sql, userBean.getName(),userBean.getPassword(),userBean.getType(),userBean.getSex(),userBean.getBirthDay(),userBean.getPhone(),userBean.getStatus(),userBean.getNum(),userBean.getCreateDate());
 		return count == 1;
 	}
 

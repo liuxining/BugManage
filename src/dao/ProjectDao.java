@@ -13,22 +13,6 @@ import util.DataSourceUtil;
 import util.DateUtil;
 
 public class ProjectDao {
-
-	public static void main(String[] args) {
-		ProjectBean p = new ProjectBean();
-		p.setCreateDate(DateUtil.getDate());
-		p.setDescr("hahah");
-		p.setName("name");
-		p.setStatus(1);
-		p.setType(1);
-		p.setUserId(3);
-		try {
-			new ProjectDao().add(p);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
-	
 	
 	public boolean add(ProjectBean projectBean) throws SQLException {
 		QueryRunner runner = new QueryRunner(DataSourceUtil.getDataSource());

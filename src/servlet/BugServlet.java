@@ -214,6 +214,20 @@ public class BugServlet extends HttpServlet {
 			req.getRequestDispatcher(to).forward(req, resp);
 		} catch (ServletException | IOException | SQLException e) {
 			e.printStackTrace();
+			if(to != null && to.equals("HandleBugServlet_list")){
+				to = "HandleBugServlet?method=list&status=4";
+			}
+			else{
+				to = "BugServlet?method=list&to=tester_listBug&status=4&projectId=" + projectId + "&level=" + level + "&status2=" + status2 + "&page=" + page + "&userId=" + userId;
+			}
+			try {
+				req.getRequestDispatcher(to).forward(req, resp);
+			} catch (ServletException e1) {
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+			
 		}
 	}
 

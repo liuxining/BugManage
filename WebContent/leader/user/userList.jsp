@@ -31,6 +31,12 @@
 		var name = obj.name;
 		
 		var names = name.split('#');
+		
+		if(names[0] == 1){
+			alert("不能停用超级管理员");
+			return false;
+		}
+		
 		$.get('${pageContext.request.contextPath}/UserServlet?method=upStat&id=' + names[0] + '&status=' + names[1], function(data) {
 			if(data != null && data.length > 0){
 		
@@ -149,8 +155,6 @@
 	<div class="row-fluid">
 	  <div class="am-cf am-padding am-padding-bottom-0">
 	    <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">用户列表</strong> / <small>
-	  </div>
-	<c:if test="${userList != null}">
 			
 			
 				<c:if test='${type == 0 }'>
@@ -166,8 +170,12 @@
 					项目经理
 				</c:if>
 				列表
-			</small></div>
+			
+			</small>
+			</div>
+	  </div>
 		</div>
+			<c:if test="${userList != null}">
 		<div class="row-fluid">
 			<table class="am-table am-table-striped am-table-hover table-main am-table-compact">
 				<tr>

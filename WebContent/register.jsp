@@ -222,7 +222,7 @@
 
 			<div class="am-u-sm-9 am-u-sm-push-3">
 				<c:if test="${param.status.equals('3')}">
-					<div class="am-alert am-alert-danger" role="alert">添加成功</div>
+					<div class="am-alert am-alert-success" role="alert">添加成功</div>
 				</c:if>
 				<c:if test="${param.status.equals('8')}">
 					<div class="am-alert am-alert-danger" role="alert">注册失败</div>

@@ -111,7 +111,12 @@ public class UserServlet extends HttpServlet {
 		UserBean userBean = new UserBean();
 		try {
 			BeanUtils.populate(userBean, req.getParameterMap());
-			boolean flag = userDao.update(userBean);
+			boolean flag = false;
+			
+			if(userBean.getId() != 1){
+				flag = userDao.update(userBean);
+				userBean.setStatus(3);
+			}
 			resp.getWriter().print(userBean.getId() + "#" + userBean.getStatus() + "#" + (flag ? "1" : "2"));
 			resp.getWriter().flush();
 			resp.getWriter().close();
@@ -134,8 +139,8 @@ public class UserServlet extends HttpServlet {
 		int type = StringUtil.stringToInt(req.getParameter("type"));
 		int status2 = StringUtil.stringToInt(req.getParameter("status2"));
 		int page = StringUtil.stringToInt(req.getParameter("page"));
+		int status = 4;
 		try {
-			int status = 4;
 			boolean flag = false;
 			if(id == 1){
 				flag = false;
@@ -151,6 +156,11 @@ public class UserServlet extends HttpServlet {
 			req.getRequestDispatcher("UserServlet?method=list&status=" + status + "&type=" + type + "&status2=" + status2 + "&page=" + page).forward(req, resp);
 		} catch (SQLException | ServletException | IOException e) {
 			e.printStackTrace();
+			try {
+				req.getRequestDispatcher("UserServlet?method=list&status=" + status + "&type=" + type + "&status2=" + status2 + "&page=" + page).forward(req, resp);
+			} catch (ServletException | IOException e1) {
+				e1.printStackTrace();
+			}
 		}
 	}
 

@@ -66,7 +66,7 @@
 								content += '通过';
 							}
 							content += '</td><td>';
-							content += '<button type="button" class="am-btn am-btn-primary" name="' + item.id + '#3" onclick="shenHe(this)">接受</button>&nbsp;&nbsp;&nbsp;<button type="button" class="am-btn am-btn-primary" name="' + item.id + '#2" onclick="shenHe(this)">拒绝</button></td></tr>';
+							content += '<a href="#" class="am-btn am-btn-default am-btn-xs am-hide-sm-only" name="' + item.id + '#3" onclick="shenHe(this)"><span class="am-icon-check-square"></span> 接受</a><a href="#" class="am-btn am-btn-default am-btn-xs am-hide-sm-only" name="' + item.id + '#2" onclick="shenHe(this)"><span class="am-icon-ban"></span> 拒绝</a></td></tr>';
 
 							
 						});

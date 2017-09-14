@@ -90,7 +90,7 @@ public class CollectServlet extends HttpServlet {
 			req.getSession().setAttribute("handleBug3Countc", handleBug3Count);
 			req.getSession().setAttribute("handleBug2Countc", handleBug2Count);
 			req.getSession().setAttribute("handleBug1Countc", handleBugCount - handleBug2Count - handleBug3Count);
-			List<HandleBugBean> list = handleBugDao.getAll(0, 0, 0, 0);
+			List<HandleBugBean> list = handleBugDao.getAllByPage(0, 0, 0, 0, 0, 5);
 			for (HandleBugBean handleBugBean : list) {
 				handleBugBean.setBugBean(bugDao.getById(handleBugBean.getBugId()));
 				handleBugBean.setUserBean(userDao.getById(handleBugBean.getUserId()));

@@ -42,7 +42,7 @@
           </ul>
         </li>
         
-        <li><a href="${pageContext.request.contextPath}/HandleBugServlet?method=leaderListHandleBugList&to=listHandleBug" target="mainAction"><span class="am-icon-table"></span> 查看解决方案</a></li>
+        <li><a href="${pageContext.request.contextPath}/HandleBugServlet?method=leaderListHandleBugList&to=listHandleBug" target="mainAction"><span class="am-icon-table"></span> 查看所有解决方案</a></li>
         
         <li><a href="${pageContext.request.contextPath}/UserServlet?method=detail&to=userInfo&id=${loginUserBean.id}" target="mainAction"><span class="am-icon-table"></span> 个人信息</a></li>
         

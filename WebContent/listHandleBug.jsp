@@ -26,10 +26,10 @@
 	function shenHe(obj){
 		var msg = obj.name;
 		var str = msg.split('#');
-		alert(msg);
+	//	alert(msg);
 		$.get('${pageContext.request.contextPath}/HandleBugServlet?method=shenHe&id=' + str[0] + '&pass=' + str[1], function(data) {
 			if(data != null && data.length > 0){
-				alert(data);
+				//alert(data);
 				if(data == 2){
 					$("#" + str[0]).html('未通过');
 				}
@@ -240,7 +240,7 @@
 
 
 	               
-   	                      <a class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" href="${pageContext.request.contextPath}/HandleBugServlet?method=leaderListHandleBugDelete&id=${item.id}&bugId=${bugId}&pass=${pass}&userId=${userId}&page=${page}" onclick="return confirm('确定删除吗？')"><span class="am-icon-trash-o"></span> 删除</a>
+   	                      <a class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" href="${pageContext.request.contextPath}/HandleBugServlet?method=leaderListHandleBugDelete&id=${item.id}&bugId=${bugId}&pass=${pass}&userId=${userId}&page=${page}&to=listHandleBug" onclick="return confirm('确定删除吗？')"><span class="am-icon-trash-o"></span> 删除</a>
 
 
 							<a href="#" class="am-btn am-btn-default am-btn-xs am-hide-sm-only" name="${item.id}#3" onclick="shenHe(this)"><span class="am-icon-check-square"></span> 接受</a>
