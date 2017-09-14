@@ -23,7 +23,7 @@ public class HandleBugDao {
 
 	public List<HandleBugBean> getByBugId(int bugId) throws SQLException {
 		QueryRunner runner = new QueryRunner(DataSourceUtil.getDataSource());
-		String sql = "select * from handleBug where bugId=? order by data desc";
+		String sql = "select * from handleBug where bugId=? order by date desc";
 		List<HandleBugBean> list = null;
 		list = runner.query(sql, new BeanListHandler<HandleBugBean>(HandleBugBean.class), bugId);
 		return list;
@@ -68,7 +68,7 @@ public class HandleBugDao {
 		if(pass != 0){
 			sql += " and pass=" + pass;
 		}
-		sql += " order by data desc";		
+		sql += " order by date desc";		
 		List<HandleBugBean> list = null;
 		list = runner.query(sql, new BeanListHandler<HandleBugBean>(HandleBugBean.class));
 		return list;

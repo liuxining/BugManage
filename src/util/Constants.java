@@ -10,5 +10,5 @@ package util;
 public class Constants {
 	public static String PIC_UPLOAD_PATH;
 	public static String PIC_SHOW_PATH;
-	public static final int PAGE_SIZE = 1;
+	public static final int PAGE_SIZE = 2;
 }
