@@ -37,10 +37,10 @@
 	<div class="row-fluid">
 		
 		<div class="col-md-12">
-			<form class="am-form-horizontal" action="${pageContext.request.contextPath}/BugServlet?method=list&to=programmer_listBug" method="post">
+			<form class="am-form am-form-horizontal" action="${pageContext.request.contextPath}/BugServlet?method=list&to=programmer_listBug" method="post">
 				<div class="row-fluid">
 					<div class="col-sm-2 am-form-group">
-						<select class="form-control" name="level">
+						<select name="level">
 							<c:if test="${level == 0 }">
 								<option value="0" selected="selected">所有Bug等级</option>
 							</c:if>
@@ -73,7 +73,7 @@
 					</div>
 
 					<div class="col-sm-2 am-form-group">
-						<select class="form-control" name="projectId">
+						<select name="projectId">
 							<c:if test="${projectId == 0 }">
 								<option value="0" selected="selected">所有项目</option>
 							</c:if>
@@ -93,7 +93,7 @@
 						</select>
 					</div>
 					<div class="col-sm-2 am-form-group">
-						<select class="form-control" name="userId">
+						<select name="userId">
 							<c:if test="${userId == 0 }">
 								<option value="0" selected="selected">所有人员</option>
 							</c:if>
@@ -112,6 +112,7 @@
 							
 						</select>
 					</div>
+					<input type="hidden" name="status2" value="1" />
 					<div class="col-sm-4">
 						<button type="submit" class="am-btn am-btn-primary">筛选</button>
 					</div>
