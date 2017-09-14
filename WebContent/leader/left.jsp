@@ -46,10 +46,10 @@
         <li><a href="${pageContext.request.contextPath}/HandleBugServlet?method=leaderListHandleBugList&to=listHandleBug" target="mainAction"><span class="am-icon-table"></span> 查看解决方案</a></li>
 
         <li class="admin-parent">
-          <a class="am-cf" data-am-collapse="{target: '#collapse-nav2'}"><span class="am-icon-bug"></span> 人员管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <a class="am-cf" data-am-collapse="{target: '#collapse-nav2'}"><span class="am-icon-user"></span> 人员管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
           <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav2">
-            <li><a href="../register.jsp?optr=admin" class="am-cf" target="mainAction"><span class="am-icon-upload"></span> 添加人员<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
-            <li><a href="${pageContext.request.contextPath}/UserServlet?method=list&type=0" target="mainAction"><span class="am-icon-puzzle-piece"></span> 查看所有人员</a></li>
+            <li><a href="../register.jsp?optr=admin" class="am-cf" target="mainAction"><span class="am-icon-user-plus"></span> 添加人员<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+            <li><a href="${pageContext.request.contextPath}/UserServlet?method=list&type=0" target="mainAction"><span class="am-icon-list"></span> 查看所有人员</a></li>
 
             <li><a href="${pageContext.request.contextPath}/UserServlet?method=list&type=0&status2=1" target="mainAction"><span class="am-icon-puzzle-piece"></span> 审核人员</a></li>
             

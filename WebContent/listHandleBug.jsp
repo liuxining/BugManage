@@ -243,8 +243,8 @@
    	                      <a class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" href="${pageContext.request.contextPath}/HandleBugServlet?method=leaderListHandleBugDelete&id=${item.id}&bugId=${bugId}&pass=${pass}&userId=${userId}&page=${page}" onclick="return confirm('确定删除吗？')"><span class="am-icon-trash-o"></span> 删除</a>
 
 
-							<a href="#" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" name="${item.id}#3" onclick="shenHe(this)"><span class="am-icon-trash-o"></span> 接受</a>
-							<a href="#" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only" name="${item.id }#2" onclick="shenHe(this)"><span class="am-icon-trash-o"></span> 拒绝</a>
+							<a href="#" class="am-btn am-btn-default am-btn-xs am-hide-sm-only" name="${item.id}#3" onclick="shenHe(this)"><span class="am-icon-check-square"></span> 接受</a>
+							<a href="#" class="am-btn am-btn-default am-btn-xs am-hide-sm-only" name="${item.id }#2" onclick="shenHe(this)"><span class="am-icon-ban"></span> 拒绝</a>
 						</c:if>
 
 	                    </div>
